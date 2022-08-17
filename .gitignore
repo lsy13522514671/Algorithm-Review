@@ -1,0 +1,5 @@
+*.class
+code/bin
+code/.vscode
+code/bin
+code/lib
