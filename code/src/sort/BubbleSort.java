@@ -15,14 +15,19 @@ public class BubbleSort {
         int[] arrayCopy = new int[array.length];
         System.arraycopy(array, 0, arrayCopy, 0, arrayCopy.length);
 
-        for(int i=1; i < arrayCopy.length; i++) {
-            for(int j=i-1; j>=0; j--) {
-                if(arrayCopy[i] < arrayCopy[j]) {
-                    swap(arrayCopy, i, j);
-                    i=j;
-                } else {
-                    break;
+        int n = arrayCopy.length;
+        boolean swapped = false;
+
+        for(int i=0; i < n-1; i++) {
+            for(int j=0; j < n-1-i; j++) {
+                if(arrayCopy[j] > arrayCopy[j+1]) {
+                    swap(arrayCopy, j, j+1);
+                    swapped=true;
                 }
+            }
+
+            if(!swapped) {
+                return arrayCopy;
             }
         }
 
