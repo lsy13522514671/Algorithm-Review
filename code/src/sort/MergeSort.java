@@ -51,12 +51,7 @@ public class MergeSort {
         }
     }
 
-    public static int[] sort(int[] array) {
-        int[] arrayCopy = new int[array.length];
-        System.arraycopy(array, 0, arrayCopy, 0, arrayCopy.length);
-
-        mergeSort(arrayCopy, 0, arrayCopy.length-1);
-
-        return arrayCopy;
+    public static void sort(int[] array) {
+        mergeSort(array, 0, array.length-1);
     }
 }

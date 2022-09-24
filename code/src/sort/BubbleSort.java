@@ -7,30 +7,25 @@ public class BubbleSort {
         array[b] = temp;
     }
 
-    public static int[] sort(int[] array) {
+    public static void sort(int[] array) {
         if(array.length<2) {
-            return array;
+            return ;
         }
 
-        int[] arrayCopy = new int[array.length];
-        System.arraycopy(array, 0, arrayCopy, 0, arrayCopy.length);
-
-        int n = arrayCopy.length;
+        int n = array.length;
         boolean swapped = false;
 
         for(int i=0; i < n-1; i++) {
             for(int j=0; j < n-1-i; j++) {
-                if(arrayCopy[j] > arrayCopy[j+1]) {
-                    swap(arrayCopy, j, j+1);
+                if(array[j] > array[j+1]) {
+                    swap(array, j, j+1);
                     swapped=true;
                 }
             }
 
             if(!swapped) {
-                return arrayCopy;
+                return ;
             }
         }
-
-        return arrayCopy;
     }
 }

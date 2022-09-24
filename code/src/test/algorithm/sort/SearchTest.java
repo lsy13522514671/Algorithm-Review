@@ -1,4 +1,4 @@
-package test;
+package test.algorithm.sort;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
