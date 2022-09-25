@@ -1,10 +1,11 @@
 package test.algorithm.sort;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
-import search.BinarySearch;
-import search.LinearSearch;
+import algorithm.search.BinarySearch;
+import algorithm.search.LinearSearch;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class SearchTest {

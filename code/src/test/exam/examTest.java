@@ -1,4 +1,4 @@
-package test.algorithm.exam;
+package test.exam;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;

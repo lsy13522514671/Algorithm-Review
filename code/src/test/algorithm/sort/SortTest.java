@@ -1,12 +1,13 @@
 package test.algorithm.sort;
 
 import org.junit.Test;
-import static org.junit.Assert.assertArrayEquals;
 
-import sort.InsertionSort;
-import sort.MergeSort;
-import sort.BubbleSort;
-import sort.HeapSort;
+import algorithm.sort.BubbleSort;
+import algorithm.sort.HeapSort;
+import algorithm.sort.InsertionSort;
+import algorithm.sort.MergeSort;
+
+import static org.junit.Assert.assertArrayEquals;
 
 public class SortTest {
     int[] emptyArray = {};

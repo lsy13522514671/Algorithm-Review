@@ -16,7 +16,7 @@ public class Perimeter {
             for(int j=i; j<p/2; j++) {
                 int k = p-i-j;
                 if(i*i + j*j == k*k) {
-                    System.out.println("edges: " + i+", "+j+", "+k);
+                    // System.out.println("edges: " + i+", "+j+", "+k);
                     ans++;
                 }
             }

@@ -1,4 +1,4 @@
-package other;
+package algorithm.other;
 import java.util.HashMap;
 
 class DLinkedNode {

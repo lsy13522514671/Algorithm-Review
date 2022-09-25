@@ -1,4 +1,4 @@
-package sort;
+package algorithm.sort;
 
 public class BubbleSort {
     public static void swap(int[] array, int a, int b) {

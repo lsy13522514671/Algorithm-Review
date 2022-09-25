@@ -1,4 +1,4 @@
-package sort;
+package algorithm.sort;
 
 public class HeapSort {
     private static void swap(int[] array, int i, int j) {
