@@ -1,4 +1,4 @@
-package algorithm.data_structure.tree;
+package algorithm.dataStructure.tree;
 
 public class BSTNode {
     int val;

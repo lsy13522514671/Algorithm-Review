@@ -1,4 +1,4 @@
-package algorithm.data_structure.tree;
+package algorithm.dataStructure.tree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +69,7 @@ public class BinarySearchTree {
     }
 
     /**
-     * The function checks whether the current node is the target. If it is, it returns the current node. 
+     * The helper function checks whether the current node is the target. If it is, it returns the current node. 
      * Otherwise, it keeps searching in the possible child.
      * 
      * 
@@ -77,15 +77,15 @@ public class BinarySearchTree {
      * @param val the target node's value
      * @return the target node
      */
-    public BSTNode searchNode(BSTNode node, int val) {
+    public BSTNode searchNodeHelp(BSTNode node, int val) {
         if(node == null) {
             return null;
         }
 
         if(val < node.val) {
-            return searchNode(node.left, val);
+            return searchNodeHelp(node.left, val);
         } else if(val > node.val) {
-            return searchNode(node.right, val);
+            return searchNodeHelp(node.right, val);
         } else {
             return node;
         }
@@ -98,7 +98,42 @@ public class BinarySearchTree {
      * @return the target node
      */
     public BSTNode search(int val) {
-        return searchNode(this.root, val);
+        return searchNodeHelp(this.root, val);
+    }
+
+    /**
+     * The helper function inserts a new node into the node. 
+     * 
+     * 
+     * @param parent current node to insert
+     * @param val the new node's value to be inserted
+     * @return the inserted node
+     */
+    public BSTNode insertNodeHelp(BSTNode parent, int val) {
+        if(parent == null) {
+            return new BSTNode(val);
+        }
+        
+        if(val < parent.val) {
+            parent.left = insertNodeHelp(parent.left, val);
+            return parent;
+        }
+        
+        if(val > parent.val) {
+            parent.right = insertNodeHelp(parent.right, val);
+            return parent;
+        }
+
+        return parent;
+    }
+
+    /**
+     * The function inserts the node into the BST.
+     * 
+     * @param val The value of node to be inserted
+     */
+    public void insert(int val) {
+        root = insertNodeHelp(root, val);
     }
 
     /**

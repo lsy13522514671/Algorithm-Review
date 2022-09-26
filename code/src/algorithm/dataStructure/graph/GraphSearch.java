@@ -1,4 +1,4 @@
-package algorithm.data_structure.graph;
+package algorithm.dataStructure.graph;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -65,7 +65,7 @@ public class GraphSearch {
     }
 
 
-    public void recurDFSHelper(int row, int col, List<int[]> path, boolean[][] visited) {
+    public void recurDFSHelp(int row, int col, List<int[]> path, boolean[][] visited) {
         if((row < 0) || (row >= this.width) || (col < 0) || (col >= this.length) ||
         (map[row][col] == 0) || visited[row][col]) {
             return ;
@@ -77,14 +77,14 @@ public class GraphSearch {
         for(int[] direction : DIR) {
             int newRow = row+direction[0];
             int newCol = col+direction[1];
-            recurDFSHelper(newRow, newCol, path, visited);
+            recurDFSHelp(newRow, newCol, path, visited);
         }
     }
 
     public List<int[]> searchRecurDFS(int startRow, int startCol) {
         List<int[]> path = new ArrayList<>();
         boolean[][] visited = new boolean[width][length];
-        recurDFSHelper(0, 0, path, visited);
+        recurDFSHelp(0, 0, path, visited);
 
         return path;
     }
