@@ -6,6 +6,7 @@ import algorithm.sort.BubbleSort;
 import algorithm.sort.HeapSort;
 import algorithm.sort.InsertionSort;
 import algorithm.sort.MergeSort;
+import algorithm.sort.QuickSort;
 
 import static org.junit.Assert.assertArrayEquals;
 
@@ -68,6 +69,15 @@ public class SortTest {
         int[][] inputArray = cloneInput();
         for(int i=0; i<ans.length; i++) {
             HeapSort.sort(inputArray[i]);
+            assertArrayEquals(ans[i], inputArray[i]);
+        }
+    }
+
+    @Test
+    public void testQuickSort () {
+        int[][] inputArray = cloneInput();
+        for(int i=0; i<ans.length; i++) {
+            QuickSort.sort(inputArray[i]);
             assertArrayEquals(ans[i], inputArray[i]);
         }
     }
