@@ -41,10 +41,10 @@ public class StringSort {
         }
 
         String regex = "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}";
+        Pattern pattern = Pattern.compile(regex);
 
         Arrays.sort(result, new Comparator<String>() {
             public int compare(String s1, String s2) {
-                Pattern pattern = Pattern.compile(regex);
                 Matcher matcher1 = pattern.matcher(s1);
                 Matcher matcher2 = pattern.matcher(s2);
                 matcher1.find();

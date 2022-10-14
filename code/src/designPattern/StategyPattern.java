@@ -1,37 +1,37 @@
 package designPattern;
 
-interface DiscountCode {
-    public void useDiscount();
+interface IStrategy {
+    public void useStrategy();
 }
 
-class DirectDiscountCode implements DiscountCode{
+class ConcreteStrategy1 implements IStrategy {
 
     @Override
-    public void useDiscount() {
-        System.out.println("direct discount applied on the current price!");
+    public void useStrategy() {
+        System.out.println("concrete strategy 1!");
     }
 }
 
-class upToDiscountCode implements DiscountCode {
+class ConcreteStrategy2 implements IStrategy {
 
     @Override
-    public void useDiscount() {
-        System.out.println("discount applied on the current price if the price is up to a value!");
+    public void useStrategy() {
+        System.out.println("concrete strategy 2!");
     }
 }
 
-class percentageDiscountCode implements DiscountCode {
+class ConcreteStrategy3 implements IStrategy {
 
     @Override
-    public void useDiscount() {
-        System.out.println("percentage discount applied on the current price!");
+    public void useStrategy() {
+        System.out.println("concrete strategy 3!");
     }
 }
 
 class Context {
-    private DiscountCode discount = null;
+    private IStrategy strategy = null;
 
-    public void useDiscount(DiscountCode d) {
-        this.discount.useDiscount();
+    public void useStrategy() {
+        this.strategy.useStrategy();
     }
 }
